@@ -11,16 +11,16 @@ unsigned int	ft_strlen(const char *s)
 	return (len);
 }
 
-void	*ft_memset(void *b, int c, unsigned int len)
+void	ft_bzero(void *s, unsigned int n)
 {
-	unsigned int	i;
-	unsigned char	*bb;
+	char	*ss;
 
-	i = 0;
-	bb = (unsigned char *) b;
-	while (i < len)
-		bb[i++] = (unsigned char) c;
-	return (b);
+	ss = (char *) s;
+	while (n > 0)
+	{
+		*ss++ = 0;
+		n--;
+	}
 }
 
 void	*ft_memcpy(void *dst, const void *src, unsigned int n)
@@ -38,6 +38,22 @@ void	*ft_memcpy(void *dst, const void *src, unsigned int n)
 		n--;
 	}
 	return (dst);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	*ptr;
+
+	ptr = (char *)s;
+	while (*ptr)
+	{
+		if (*ptr == c)
+			return (ptr);
+		ptr++;
+	}
+	if (*ptr == c)
+		return (ptr);
+	return (0);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
