@@ -11,18 +11,6 @@ unsigned int	ft_strlen(const char *s)
 	return (len);
 }
 
-void	ft_bzero(void *s, unsigned int n)
-{
-	char	*ss;
-
-	ss = (char *) s;
-	while (n > 0)
-	{
-		*ss++ = 0;
-		n--;
-	}
-}
-
 void	*ft_memcpy(void *dst, const void *src, unsigned int n)
 {
 	unsigned char	*tmp;
@@ -73,4 +61,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ptr[i++] = *s2++;
 	ptr[i] = '\0';
 	return (ptr);
+}
+
+int	ft_line_len(char *ptr)
+{ 
+	int	len;
+
+	len = 0;
+	while (ptr[len] && ptr[len] != '\n')
+		len++;
+	if (ptr[len] == '\n')
+		len++;
+	return (len);
 }
