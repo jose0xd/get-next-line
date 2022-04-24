@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 10:38:32 by jarredon          #+#    #+#             */
-/*   Updated: 2022/04/24 10:38:35 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:15:51 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 int				ft_line_len(char *ptr);
 
 void			ft_clean_memory(char **memory);
-int				ft_fill_buffer(char *buffer, int fd);
 int				ft_fill_memory(char **memory, int fd);
 char			*ft_get_line(char **memory);
 char			*get_next_line(int fd);

@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 10:38:10 by jarredon          #+#    #+#             */
-/*   Updated: 2022/04/24 10:40:15 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:18:56 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,6 @@ void	ft_clean_memory(char **memory)
 	*memory = new_memo;
 }
 
-int	ft_fill_buffer(char *buffer, int fd)
-{
-	int	bytes;
-	int	i;
-
-	bytes = 1;
-	i = 0;
-	while (bytes > 0 && i < BUFFER_SIZE)
-		bytes = read(fd, &buffer[i++], 1);
-	if (bytes == -1)
-		return (-1);
-	if (!bytes)
-		i--;
-	buffer[i] = '\0';
-	return (bytes);
-}
-
 int	ft_fill_memory(char **memory, int fd)
 {
 	char	buffer[BUFFER_SIZE + 1];
@@ -61,9 +44,10 @@ int	ft_fill_memory(char **memory, int fd)
 	ret = 1;
 	while (!ft_strchr(*memory, '\n') && ret)
 	{
-		ret = ft_fill_buffer(buffer, fd);
-		if (ret == -1)
-			return (-1);
+		ret = read(fd, buffer, BUFFER_SIZE);
+		if (ret < 1)
+			return (ret);
+		buffer[ret] = '\0';
 		tmp = *memory;
 		*memory = ft_strjoin(*memory, buffer);
 		free(tmp);
