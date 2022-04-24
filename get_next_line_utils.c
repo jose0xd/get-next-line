@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 10:38:19 by jarredon          #+#    #+#             */
+/*   Updated: 2022/04/24 10:40:52 by jarredon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "get_next_line.h"
 
@@ -64,7 +76,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 int	ft_line_len(char *ptr)
-{ 
+{
 	int	len;
 
 	len = 0;

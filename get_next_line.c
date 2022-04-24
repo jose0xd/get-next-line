@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 10:38:10 by jarredon          #+#    #+#             */
+/*   Updated: 2022/04/24 10:40:15 by jarredon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include "get_next_line.h"
@@ -60,7 +72,7 @@ int	ft_fill_memory(char **memory, int fd)
 }
 
 char	*ft_get_line(char **memory)
-{  
+{
 	char	*line;
 	int		len;
 	int		i;
