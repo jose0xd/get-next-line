@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 10:38:10 by jarredon          #+#    #+#             */
-/*   Updated: 2022/04/24 13:18:56 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:45:33 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,19 @@ char	*ft_get_line(char **memory)
 char	*get_next_line(int fd)
 {
 	static char	*memory = NULL;
+	char		*line;
 
 	if (ft_fill_memory(&memory, fd) == -1)
+	{
+		free(memory);
+		memory = NULL;
 		return (NULL);
-	return (ft_get_line(&memory));
+	}
+	line = ft_get_line(&memory);
+	if (!line)
+	{
+		free(memory);
+		memory = NULL;
+	}
+	return (line);
 }
