@@ -6,13 +6,13 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 10:38:10 by jarredon          #+#    #+#             */
-/*   Updated: 2022/04/27 18:29:53 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:39:05 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	ft_clean_memory(char **memory)
 {
